@@ -13,10 +13,17 @@ class TableView: UITableViewController {
    
     var fruits = ["hello","hi","mastert"]
     
-    
+    let defaults = UserDefaults.standard
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        if let item = defaults.array(forKey: "ToDolistarray") as? [String] {
+            
+            fruits = item
+            
+            
+        }
         // Do any additional setup after loading the view, typically from a nib.
     }
 
@@ -83,6 +90,8 @@ class TableView: UITableViewController {
             }
             else{
                 self.fruits.append(textfield.text!)
+                
+               self.defaults.setValue(self.fruits, forKey: "ToDolistarray")
                 self.tableView.reloadData()
             }
             
