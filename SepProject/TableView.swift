@@ -10,7 +10,8 @@ import UIKit
 
 class TableView: UITableViewController {
     
-    let fruits = ["hello","hi","mastert"]
+   
+    var fruits = ["hello","hi","mastert"]
     
     
 
@@ -57,5 +58,84 @@ class TableView: UITableViewController {
     
         }
 }
+    
+    
+    // Adding New Item Using Bar Button
+    
+    
+    @IBAction func AddingItems(_ sender: Any) {
+        
+        var textfield = UITextField()
+        
+        
+        let alert = UIAlertController.init(title: "Add new  Item", message: "", preferredStyle: .alert)
+        
+        
+
+        let action = UIAlertAction.init(title: "Add ", style: .default) { (action) in
+            
+            print("sucess")
+            print(textfield)
+            
+            if textfield.text == "" {
+                
+                self.tableView.reloadData()
+            }
+            else{
+                self.fruits.append(textfield.text!)
+                self.tableView.reloadData()
+            }
+            
+            
+
+            
+            
+            
+            }
+        
+        
+    
+        alert.addTextField { (alertTextField) in
+            
+            alertTextField.placeholder = "Add New Item"
+            
+            textfield = alertTextField
+            
+            
+        }
+        alert.addAction(action)
+        
+        present(alert, animated: true, completion: nil)
+        
+        
+        
+        
+        
+    }
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
 }
 

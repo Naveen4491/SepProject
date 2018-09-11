@@ -33,7 +33,13 @@
                             <outlet property="delegate" destination="5S4-VH-Urb" id="Z0W-yh-zhK"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Cart Fruits" id="H6c-sE-u2D"/>
+                    <navigationItem key="navigationItem" title="Cart Fruits" id="H6c-sE-u2D">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="b9u-FD-nKd">
+                            <connections>
+                                <action selector="AddingItems:" destination="5S4-VH-Urb" id="hr6-gv-Hdd"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="NB1-MY-iFM" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
